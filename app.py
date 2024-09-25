@@ -43,6 +43,12 @@ def sum():
     num1 = data['num1']
     num2 = data['num2']
     result = num1 + num2
+
+    with Session(db.engine) as session:
+        with session.begin():
+            sum_entry = Sum(num1=num1, num2=num2, result=result)
+            session.add(sum_entry)
+
     return jsonify({'result': result})
 
 @app.route('/sum/result/<int:sum>', methods=['GET'])
