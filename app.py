@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshamllow
+from flask_marshmallow import Marshmallow
 from marshmallow import fields
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, Session
 
 app = Flask(__name__)
-ma = Marshamllow(app)
+ma = Marshmallow(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://cloud_db_m37j_user:MOy24Zfi7CGRat1TDCNQw4BNS6HNCgWW@dpg-crq6v6u8ii6s73cqdkjg-a.oregon-postgres.render.com/cloud_db_m37j'
 app.config['SQLALCHEMNY_TRACK_MODIFICATIONS'] = False
 
